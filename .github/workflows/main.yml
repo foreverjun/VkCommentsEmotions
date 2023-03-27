@@ -17,4 +17,4 @@ jobs:
     - name: Type check with mypy
       run: |
         pip install mypy
-        mypy app.py
+        mypy main.py
