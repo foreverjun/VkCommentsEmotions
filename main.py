@@ -57,9 +57,7 @@ def get_comments(
 
 
 def main() -> None:
-    session = VkApi(
-        token=st.secrets["VK_TOKEN"]
-    )
+    session = VkApi(token=st.secrets["VK_TOKEN"])
     vk: VkApi = session.get_api()
     st.title(
         "Определите эмоциональный окрас комментариев под постом сообщества Вконтакте"
