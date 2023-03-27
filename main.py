@@ -37,7 +37,7 @@ def get_comments(
     prev: int = -1
     while i < 35 and len(comments) < comments_num and len(comments) != prev:
         current_num: int = min(comments_num - len(comments), 100)
-        prev: int = len(comments)
+        prev = len(comments)
         try:
             comments_buf = vk.wall.getComments(
                 owner_id=owner_id,
@@ -79,13 +79,13 @@ def main() -> None:
     user_input: str = st.text_input(
         "Введите ссылку на пост сообщества Вконтакте, чтобы оценить их эмоциональный окрас:"
     )
-    comments_num: int = st.number_input(
+    comments_num: int = int(st.number_input(
         "Введите максимально возможное количество комментариев (максимум 3500, учитываются первые 10 вложенных "
         "комментариев из каждой ветки)",
         min_value=0,
         max_value=3500,
         step=1,
-    )
+    ))
 
     if st.button("Оценить"):
         emotions = {
