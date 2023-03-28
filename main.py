@@ -48,6 +48,7 @@ def get_comments(
             )["items"]
         except:
             st.warning("Не удалось получить комментарии поста")
+            return []
         comments += comments_buf
         for comment in comments_buf:
             if len(comment["thread"]["items"]) + len(comments) < comments_num:
